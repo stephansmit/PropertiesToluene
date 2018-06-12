@@ -54,7 +54,7 @@ PropertiesSU2/.recommenders
 *.pydevproject
 
 # CDT-specific (C/C++ Development Tooling)
-PropertiesSU2.cproject
+PropertiesSU2/.cproject
 
 # CDT- autotools 
 .autotools
