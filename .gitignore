@@ -55,6 +55,7 @@ PropertiesSU2/.recommenders
 
 # CDT-specific (C/C++ Development Tooling)
 PropertiesSU2/.cproject
+PropertiesSU2/.project
 
 # CDT- autotools 
 .autotools
