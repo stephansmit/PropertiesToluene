@@ -17,6 +17,15 @@ dfIG.columns = [str(col) + '_IG' for col in dfIG.columns]
 df = pd.concat([dfPR, dfIG], axis=1)
 df['P']=df["P_PR"]
 df['T']=df["T_IG"]
+print("Calculating Partial derivative of Enthalpy with respect to density at constant pressure")
+df['dhdrho_P_CP'  ]=df.apply(lambda x: CP.PropsSI("d(H)/d(D)|P","T", x['T'],"P", x['P']*1e5, fluid),axis=1)
+print("Calculating Partial derivative of Enthalpy with respect to pressure at constant density")
+df['dhdP_rho_CP'  ]=df.apply(lambda x: CP.PropsSI("d(H)/d(P)|D","T", x['T'],"P", x['P']*1e5, fluid),axis=1)
+print("Calculating Partial derivative of Entropy with respect to density at constant pressure")
+df['dsdrho_P_CP'  ]=df.apply(lambda x: CP.PropsSI("d(S)/d(D)|P","T", x['T'],"P", x['P']*1e5, fluid),axis=1)
+print("Calculating Partial derivative of Entropy with respect to pressure at constant density")
+df['dsdP_rho_CP'  ]=df.apply(lambda x: CP.PropsSI("d(S)/d(P)|D","T", x['T'],"P", x['P']*1e5, fluid),axis=1)
+
 print("Calculating Density")
 df['rho_CP']=df.apply(lambda x: CP.PropsSI("D", "T", x['T'], "P", x['P']*1e5, fluid),axis=1)
 print("Calculating Laminar Viscosity")
@@ -33,6 +42,7 @@ print("Calculating Speed of sound")
 df['c_CP'  ]=df.apply(lambda x: CP.PropsSI("A", "T", x['T'], "P", x['P']*1e5, fluid),axis=1)
 print("Calculating Enthalpy")
 df['h_CP'  ]=df.apply(lambda x: CP.PropsSI("H", "T", x['T'], "P", x['P']*1e5, fluid),axis=1)
+
 
 df.to_csv('../Tables/Toluene_PT.txt', sep='\t', float_format='%.6E', index=None)
 
