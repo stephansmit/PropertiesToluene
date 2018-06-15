@@ -68,16 +68,16 @@ if __name__=="__main__":
     print("creating figure speed of sound")
     plot_figure(grouped, 'c', 'c [m/s]',"Speed of sound with different models", [500,600], [150,240], "speedofsound.png", plist, styles,False)
     print("creating figure dsdrho_p")
-    plot_figure(grouped, 'dsdrho_P', r'$\displaystyle -\frac{\partial s}{\partial \rho}|_P [-]$',
+    plot_figure(grouped, 'dsdrho_P', r'$\displaystyle -\frac{\partial s}{\partial \rho}|_P [J m^3/kg^2 K]$',
             "Parial derivative of entropy with respect to density at constant pressure", [500,600], [0.01,13], "dsdrho_p.png", plist, styles,True)
     print("creating figure dsdp_rho")
-    plot_figure(grouped, 'dsdP_rho', r'$\displaystyle \frac{\partial s}{\partial P}|_\rho [-]$',
+    plot_figure(grouped, 'dsdP_rho', r'$\displaystyle \frac{\partial s}{\partial P}|_\rho [MJ/kg K Pa]]$',
             "Parial derivative of entropy with respect to pressure at constant density", [500,600], [0.5,300],"dsdp_rho.png", plist, styles,True)
     print("creating figure dhdrho_P")
-    plot_figure(grouped, 'dhdrho_P', r'$\displaystyle -\frac{\partial h}{\partial \rho}|_P [-]$',
+    plot_figure(grouped, 'dhdrho_P', r'$\displaystyle -\frac{\partial h}{\partial \rho}|_P [J m^6/kg^2]$',
             "Parial derivative of enthalpy with respect to density at constant pressure", [500,600], [1,7500], "dhdrho_p.png", plist, styles,True)
     print("creating figure dhdP_rho")
-    plot_figure(grouped, 'dhdP_rho', r'$\displaystyle \frac{\partial h}{\partial P}|_\rho [-]$',
+    plot_figure(grouped, 'dhdP_rho', r'$\displaystyle \frac{\partial h}{\partial P}|_\rho [KJ/kg Pa]$',
             "Parial derivative of enthalpy with respect to pressure at constant density", [500,600], [0.2,130],"dhdp_rho.png", plist, styles,True)
 
 
