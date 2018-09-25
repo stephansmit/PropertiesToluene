@@ -5,9 +5,13 @@ SOURCE_01        = main.cpp
 $(TARGET): $(OBJECT_01) 
 
 $(OBJECT_01) : $(SOURCE_01) 
-	         g++ -g -o $(TARGET) $(SOURCE_01)  -L/home/azureuser/CoolProp/build -I/home/azureuser/CoolProp/include -I/home/azureuser/CoolProp/externals/cppformat -lCoolProp -ldl
+	         g++ -g -o $(TARGET) $(SOURCE_01)   -I/home/azureuser/CoolProp/include -I/home/azureuser/CoolProp/externals/cppformat -L/home/azureuser/CoolProp/build -lCoolProp -ldl
+
 
 all : 
 
 clean :
 	-rm $(TARGET)  $(OBJECT_01)
+
+
+
